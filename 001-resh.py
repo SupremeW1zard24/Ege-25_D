@@ -1,7 +1,8 @@
 def game(a, b, xod):
     if a + b >= 75: return xod % 2 == 0
     if xod == 0: return 0
-    nextWin = [game(a + 1, b, xod - 1), game(a * 2, b, xod - 1), game(a, b + 1, xod - 1), game(a, b * 2, xod - 1)]
+    nextWin = [game(a + 1, b, xod - 1), game(a * 2, b, xod - 1), 
+               game(a, b + 1, xod - 1), game(a, b * 2, xod - 1)]
     return any(nextWin) if (xod - 1) % 2 == 0 else all(nextWin)
 
 
